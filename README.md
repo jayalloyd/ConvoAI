@@ -1,20 +1,44 @@
-🤖 Convo AI- A modern, full-stack AI conversation platform built with the MERN Stack and managed via pnpm workspaces. This project features a high-performance monorepo architecture, real-time AI responses, and persistent chat history.✨ Core Features⚡️ Lightning Fast: Managed with pnpm for ultra-efficient dependency handling.🧠 Brain Power: Integrated with OpenAI API (or DeepSeek/Gemini) for intelligent responses.📂 Chat Persistence: Secure storage of conversation history in MongoDB Atlas.🔐 Auth Ready: Secure JWT-based user authentication and protected routes.🎨 Premium UI: Styled with Tailwind CSS, including dark mode and markdown rendering for code snippets.🛠 Project StructureUsing a monorepo approach for easier management:Plaintext/
-├── apps/
-│   ├── FrontENd/       # React + Vite (Frontend)
-│   └── Backend/       # Node.js + Express (Backend)
-├── packages/
-│   └── shared-types/ # (Optional) Shared TS interfaces
-├── pnpm-workspace.yaml
-└── package.json
-🚀 Quick Start1. Prerequisitespnpm installed (npm i -g pnpm)MongoDB Atlas connection stringOpenAI API Key2. Clone & InstallBashgit clone https://github.com/jayalloyd/ConvoAI.git
-cd ConvoAI
+# 🤖 ConvoAI
 
-# Install dependencies for all apps at once
+A high-performance ChatGPT clone built with the **MERN Stack** (MongoDB, Express, React, Node.js) and managed via **pnpm workspaces**.
+
+
+
+[Image of MERN stack architecture diagram]
+
+
+## 🌟 Overview
+ConvoAI is a full-stack AI conversation platform that features real-time messaging, persistent chat history, and a modern, responsive UI. By leveraging pnpm workspaces, this project maintains a clean separation between the frontend and backend while sharing dependencies efficiently.
+
+## ✨ Features
+- **Real-time AI Interaction:** Seamless chat experience powered by OpenAI/Gemini.
+- **Monorepo Architecture:** Managed with `pnpm` for faster installs and disk space efficiency.
+- **Persistent Storage:** MongoDB integration to save and resume conversations.
+- **Secure Auth:** JWT-based user authentication system.
+- **Markdown Rendering:** Full support for code snippets and rich text in AI responses.
+
+## 🛠️ Tech Stack
+| Layer | Technology |
+| :--- | :--- |
+| **Package Manager** | [pnpm](https://pnpm.io/) |
+| **Frontend** | React (Vite), Tailwind CSS, Framer Motion |
+| **Backend** | Node.js, Express.js |
+| **Database** | MongoDB Atlas |
+| **AI Engine** | OpenAI API |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+- **pnpm** installed: `npm i -g pnpm`
+- **Node.js** (v18+)
+- **OpenAI API Key**
+
+### 2. Installation
+Clone the repository and install all dependencies for both frontend and backend at once:
+
+```bash
+git clone [https://github.com/jayalloyd/ConvoAI.git](https://github.com/jayalloyd/ConvoAI.git)
+cd ConvoAI
 pnpm install
-3. Environment VariablesCreate a .env file inside apps/server:Code snippetPORT=5000
-MONGODB_URI=your_mongodb_uri
-JWT_SECRET=your_jwt_secret
-OPENAI_API_KEY=your_api_key
-4. Run Development ServersFrom the root directory, run both frontend and backend in parallel:Bashpnpm dev
-🏗 Scripts ReferenceCommandActionpnpm devStarts client and server concurrentlypnpm installInstalls dependencies across the workspacepnpm --filter client buildBuilds the React production bundlepnpm --filter server startStarts the production backend server
-# ConvoAI
