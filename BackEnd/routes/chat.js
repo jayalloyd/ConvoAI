@@ -1,5 +1,6 @@
 import Thread from "../models/Thread.js";
 import express from "express";
+import getOpenAIResponse from "../utils/openai.js"; 
 const router=express.Router();
 router.post("/test",async(req,res)=>{
 try{
@@ -52,6 +53,34 @@ router.delete('/threads/:threadId',async(req,res)=>{
     catch(err){
         console.log(err);
         res.status(500).json({error:"Failed to delete thread"});
+    }
+});
+router.post("/chat",async(req,res)=>{
+    const {threadId,message}=req.body;
+     if(!threadId||!message){
+            res.status(400).json({error:"threadId and message are required"});
+            
+     }
+        
+    try{
+        let thread=await Thread.findOne({threadId});
+        if(!thread){
+            //create a new thread if it doesn't exist
+            thread=new Thread({threadId,title:message
+                ,messages:[{role:"user",content:message}]});
+    }else{
+        thread.messages.push({role:"user",content:message});
+    }
+       const assistantReply = await getOpenAIResponse(message);
+            thread.messages.push({role:"assistant",content:assistantReply});
+            thread.updatedAt=new Date();
+            await thread.save();
+            res.json({reply:assistantReply});
+        
+    }
+    catch(err){
+        console.log(err);
+        res.status(500).json({error:"Failed to add message to thread"});
     }
 });
 export default router;
