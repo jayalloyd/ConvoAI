@@ -4,7 +4,7 @@ A high-performance ChatGPT clone built with the **MERN Stack** (MongoDB, Express
 
 
 
-[Image of MERN stack architecture diagram]
+
 
 
 ## 🌟 Overview
