@@ -2,7 +2,8 @@
 
 A high-performance ChatGPT clone built with the **MERN Stack** (MongoDB, Express, React, Node.js) and managed via **pnpm workspaces**.
 
-
+## 📖 About this Project
+This project was developed as part of the **Delta Full-Stack Web Development** course by **Apna College**. While the core logic follows the course curriculum, I have implemented several enhancements to make it production-ready and developer-friendly.
 
 
 
