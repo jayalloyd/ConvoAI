@@ -27,8 +27,34 @@ ConvoAI is a full-stack AI conversation platform that features real-time messagi
 | **Database** | MongoDB Atlas |
 | **AI Engine** | OpenAI API |
 
----
 
+## 🏗️ ConvoAI System Architecture
+```mermaid
+graph TD
+    subgraph Client_Side_React
+        A[React Frontend] --> B[React Hooks & State]
+        B --> C[Axios / Fetch API]
+    end
+
+    subgraph Package_Manager
+        PNPM[pnpm Workspaces] -.-> Client_Side_React
+        PNPM -.-> Server_Side_Node
+    end
+
+    subgraph Server_Side_Node
+        C --> D[Express.js Server]
+        D --> E[Auth Middleware - JWT]
+        D --> F[AI Service Controller]
+        F --> G[OpenAI / Gemini API]
+    end
+
+    subgraph Database_Layer
+        F --> H[(MongoDB Atlas)]
+        E --> H
+    end
+
+    A -.->|pnpm link| D
+```
 ## 🚀 Getting Started
 
 ### 1. Prerequisites
