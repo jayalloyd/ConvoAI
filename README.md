@@ -27,6 +27,10 @@ ConvoAI is a full-stack AI conversation platform that features real-time messagi
 | **Database** | MongoDB Atlas |
 | **AI Engine** | OpenAI API |
 
+Project Document
+
+[ConvoAi.pdf](https://github.com/user-attachments/files/25937329/ConvoAi.pdf)
+
 
 ## 🏗️ ConvoAI System Architecture
 ```mermaid
