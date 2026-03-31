@@ -16,5 +16,9 @@
     "express": "^5.2.1",
     "mongoose": "^9.1.5",
     "openai": "^6.17.0"
+  },"pnpm": {
+  "overrides": {
+    "path-to-regexp": "^3.3.0" 
   }
+}
 }
